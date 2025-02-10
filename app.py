@@ -5,11 +5,12 @@ import os
 app = Flask(__name__)
 
 CSV_FILE = "inspection_data.csv"
-@app.route("/")
-def serve_frontend():
-    return send_from_directory(".", "index.html")
 
-    
+# @app.route("/")
+# def serve_frontend():
+#     return send_from_directory(".", "index.html")
+
+
 # Ensure the CSV file has a header
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, mode="w", newline="") as file:
