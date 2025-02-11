@@ -9,18 +9,20 @@
 </head>
 <body>
     <div class="main-container">
-        <h1>Vehicle Inspection</h1>
-        <input type="text" id="plate" placeholder="Enter Plate Number">
-        <button onclick="fetchVehicleData()">Fetch Vehicle Data</button>
-        <div id="vehicle-info"></div>
-        <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
-        <input type="date" id="date">
-        <div id="documents">
-            <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
-            <label><input type="checkbox" id="licencia"> Licencia</label>
-            <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
-            <label><input type="checkbox" id="verificacion"> Verificación</label>
-            <label><input type="checkbox" id="automatico"> Automático</label>
+        <div id="vehicle-general">
+            <h1>Vehicle Inspection</h1>
+            <input type="text" id="plate" placeholder="Enter Plate Number">
+            <button onclick="fetchVehicleData()">Fetch Vehicle Data</button>
+            <div id="vehicle-info"></div>
+            <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
+            <input type="date" id="date">
+            <div id="documents">
+                <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
+                <label><input type="checkbox" id="licencia"> Licencia</label>
+                <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
+                <label><input type="checkbox" id="verificacion"> Verificación</label>
+                <label><input type="checkbox" id="automatico"> Automático</label>
+            </div>
         </div>
         <div class="left-section">
             <div id="car-sketch">
