@@ -75,5 +75,9 @@ function loadCSVData() {
         .catch(error => console.error("Error loading CSV data:", error));
 }
 
+function downloadCSV() {
+    window.location.href = "/download_csv";
+        }
+
 // Load CSV data when the page loads
 document.addEventListener("DOMContentLoaded", loadCSVData);

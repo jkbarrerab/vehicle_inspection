@@ -73,6 +73,10 @@ def get_csv_data():
         for row in reader:
             data.append(dict(zip(headers, row)))
     return jsonify(data)
+
+@app.route("/download_csv")
+def download_csv():
+    return send_file(CSV_FILE, as_attachment=True)
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
