@@ -8,22 +8,22 @@
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-    <div class="main-container">
-        <div id="vehicle-general">
-            <h1>Vehicle Inspection</h1>
-            <input type="text" id="plate" placeholder="Enter Plate Number">
-            <button onclick="fetchVehicleData()">Fetch Vehicle Data</button>
-            <div id="vehicle-info"></div>
-            <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
-            <input type="date" id="date">
-            <div id="documents">
-                <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
-                <label><input type="checkbox" id="licencia"> Licencia</label>
-                <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
-                <label><input type="checkbox" id="verificacion"> Verificación</label>
-                <label><input type="checkbox" id="automatico"> Automático</label>
-            </div>
+    <div id="vehicle-general">
+        <h1>Vehicle Inspection</h1>
+        <input type="text" id="plate" placeholder="Enter Plate Number">
+        <button onclick="fetchVehicleData()">Fetch Vehicle Data</button>
+        <div id="vehicle-info"></div>
+        <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
+        <input type="date" id="date">
+        <div id="documents">
+            <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
+            <label><input type="checkbox" id="licencia"> Licencia</label>
+            <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
+            <label><input type="checkbox" id="verificacion"> Verificación</label>
+            <label><input type="checkbox" id="automatico"> Automático</label>
         </div>
+    </div>
+    <div class="main-container">         
         <div class="left-section">
             <div id="car-sketch">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="733px" height="420px" viewBox="0 0 733 420" preserveAspectRatio="xMidYMid meet">
