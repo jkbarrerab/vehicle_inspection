@@ -9,19 +9,19 @@ body {
 .main-container {
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 2000px;
     gap: 20px;
     justify-content: center;
     align-items: flex-start;
 }
 .left-section {
     width: 50%;
-    max-width: 500px;
+    max-width: 900px;
     text-align: center;
 }
 .right-section {
     width: 50%;
-    max-width: 500px;
+    max-width: 900px;
     background: white;
     padding: 15px;
     border-radius: 8px;
@@ -46,7 +46,7 @@ th {
     justify-content: center;
     gap: 10px;
 }
-#car-sketch {
+/*#car-sketch {
     width: 100%;
     max-width: 450px;
     height: auto;
@@ -55,8 +55,38 @@ th {
     padding: 10px;
     border-radius: 10px;
 }
-
-  
+*/
+.bottom-section {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+.bottom-section textarea {
+    width: 100%;
+    max-width: 800px;
+    height: 80px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bottom-section button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bottom-section button:hover {
+    background-color: #218838;
+}  
  .container {
     background: white;
     padding: 20px;
@@ -119,9 +149,9 @@ path:hover {
     cursor: pointer;
 }
 
-#car-sketch {
+/*#car-sketch {
     width: 733px;
     height: 420px;
     background-color: lightgray;
     margin: 10px 0;
-}
+}*/
