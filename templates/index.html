@@ -185,11 +185,14 @@
                     <td><input type="text"></td>
                 </tr>
             </table>            
-        </div>     
-        <textarea id="interiorCleaning" placeholder="Limpieza Interior"></textarea>
-        <textarea id="exteriorCleaning" placeholder="Limpieza Exterior"></textarea>
-        <textarea id="finalRemarks" placeholder="Final Remarks"></textarea>
-        <button onclick="submitInspection()">Submit Inspection</button>
+        </div>
+        <div id="remarks">
+            <textarea id="interiorCleaning" placeholder="Limpieza Interior"></textarea>
+            <textarea id="exteriorCleaning" placeholder="Limpieza Exterior"></textarea>
+            <textarea id="finalRemarks" placeholder="Final Remarks"></textarea>
+            <button onclick="submitInspection()">Submit Inspection</button>
+        </div>
+
     </div>
 <button onclick="loadCSVData()">Refresh CSV Preview</button>
 <button onclick="downloadCSV()">Download CSV</button>
