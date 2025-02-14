@@ -1,12 +1,1 @@
-Plate,Mileage,Date,Interior Cleaning,Exterior Cleaning,Final Remarks,Tarjeta de Gasolina,Licencia,Tarjeta de Circulacion,Verificacion,Automatico,Damage Reports
-XYZ123,123456,2025-02-08,ok,ok,ok,NO,NO,NO,NO,NO,"left_light_center (34.953125, 243.0625); bumper_top_center (30.953125, 284.0625)"
-,,,,,,NO,NO,NO,NO,NO,"right_mirror_top (178.6015625, 211.625)"
-XYZ123,123124,2025-02-08,sdfsd,sdfsdfsd,sdfgsdfsd,NO,NO,NO,NO,NO,
-XYZ123,123124,2025-02-08,sdfsd,sdfsdfsd,sdfgsdfsd,NO,NO,NO,NO,NO,"right_mirror_top (174.6015625, 213.625); front_windshield_top (161.6015625, 323.625)"
-XYZ123,123124,2025-02-08,sdfsd,sdfsdfsd,sdfgsdfsd,NO,NO,NO,NO,NO,"right_mirror_top (174.6015625, 213.625); front_windshield_top (161.6015625, 323.625)"
-XYZ123,12345,2025-02-13,bad,bad,bad,NO,NO,NO,NO,NO,antena
-adaskj,1234,2025-02-13,,,,NO,NO,NO,NO,NO,antena
-adaskj,1234,2025-02-13,,,,NO,NO,NO,NO,NO,antena; antena
-XYZ123,5555,2025-02-04,ss,ss,ss,NO,NO,NO,NO,NO,
-XYZ123,2222,2025-02-06,kk,kk,kk,NO,NO,NO,NO,NO,antena
-XYZ123,2222,2025-02-06,kk,kk,kk,NO,NO,NO,NO,NO,antena
+VHN360,123456,2025-02-12,limpio,sucio,cambiar aceite,NO,NO,NO,NO,NO,antena: rayon; farola izquierda: rota

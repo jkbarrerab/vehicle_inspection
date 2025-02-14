@@ -8,22 +8,49 @@ function openDamagePopup(partId) {
 function closeDamagePopup() {
     document.getElementById('popup').style.display = 'none';
 }
+
 function saveDamageReport() {
     const part = document.getElementById('damagePart').value;
     const observation = document.getElementById('damageObservation').value;
-    damageReports.push({ part, observation });
+    
+    // Check if the part is already in the damageReports array
+    const existingReportIndex = damageReports.findIndex(d => d.part === part);
+    if (existingReportIndex !== -1) {
+        // Update existing observation
+        damageReports[existingReportIndex].observation = observation;
+    } else {
+        // Add new report
+        damageReports.push({ part, observation });
+    }
+    
     closeDamagePopup();
     console.log(`Damage reported on ${part}: ${observation}`);
 }
 
 function fetchVehicleData() {
-    const plate = document.getElementById("plate").value;
-    fetch(`/get_vehicle_data?plate=${plate}`)
+    const plateInput = document.getElementById("plate").value.trim();
+
+    if (!plateInput) {
+        alert("Please enter a plate number.");
+        return;
+    }
+
+    fetch(`/get_vehicle_data?plate=${plateInput}`)
         .then(response => response.json())
         .then(data => {
-            document.getElementById("vehicle-info").innerHTML = 
-                `<p>Type: ${data.type}</p><p>Brand: ${data.brand}</p><p>Driver: ${data.driver}</p><p>Model: ${data.model}</p>`;
-        });
+            if (data.error) {
+                alert(data.error);
+            } else {
+                document.getElementById("vehicle-info").innerHTML = `
+                    <p><strong>Plate:</strong> ${data.plate}</p>
+                    <p><strong>Type:</strong> ${data.type}</p>
+                    <p><strong>Brand:</strong> ${data.brand}</p>
+                    <p><strong>Driver:</strong> ${data.driver}</p>
+                    <p><strong>Model:</strong> ${data.model}</p>
+                `;
+            }
+        })
+        .catch(error => console.error("Error fetching vehicle data:", error));
 }
 
 function reportDamage(event) {
@@ -48,7 +75,7 @@ function submitInspection() {
         interiorCleaning: document.getElementById("interiorCleaning").value,
         exteriorCleaning: document.getElementById("exteriorCleaning").value,
         finalRemarks: document.getElementById("finalRemarks").value,
-        damageReports:damageReports
+        damageReports: damageReports.map(d => ({ part: d.part, observation: d.observation || 'No observation provided' }))
     };
     fetch("/submit_inspection", {
         method: "POST",

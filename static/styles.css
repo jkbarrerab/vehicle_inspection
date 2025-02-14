@@ -31,6 +31,16 @@ body {
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+.driver-info{
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -50,16 +60,7 @@ th {
     justify-content: center;
     gap: 10px;
 }
-/*#car-sketch {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    background-color: lightgray;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-}
-*/
+
 .bottom-section {
     width: 100%;
     max-width: 800px;
@@ -182,9 +183,3 @@ z-index: 1000;
 .popup button:hover {
     background-color: #218838;
 }
-/*#car-sketch {
-    width: 733px;
-    height: 420px;
-    background-color: lightgray;
-    margin: 10px 0;
-}*/

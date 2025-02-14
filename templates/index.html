@@ -17,13 +17,21 @@
         <div id="vehicle-info"></div>
         <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
         <input type="date" id="date">
-        <div id="documents">
-            <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
-            <label><input type="checkbox" id="licencia"> Licencia</label>
-            <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
-            <label><input type="checkbox" id="verificacion"> Verificación</label>
-            <label><input type="checkbox" id="automatico"> Automático</label>
+        <br>
+        <br>
+
+        <div class="driver-info">
+            <h2>Documentos</h2>
+            <label for="gasolina">Tarjeta de gasolina:  </label> <input type="text" id="gasolina" placeholder="Numero. N/A si no tiene"> 
+            <label for="gasolina_vig"> vigencia:  </label><input type="date" id="gasolina_vig"> <br>
+            <label for="licencia">Licencia de conducción:  </label> <input type="text" id="licencia" placeholder="Numero. N/A si no tiene">
+            <label for="licencia_vig">vigencia:  </label><input type="date" id="licencia_vig"> <br>
+            <label for="circulacion">Tarjeta de girculación:  </label> <input type="text" id="circulacion" placeholder="Numero. N/A si no tiene">
+            <label for="circulacion_vig">vigencia:  </label><input type="date" id="circulacion_vig"> <br>
+            <br>
+            <br>
         </div>
+
     </div>
 
     <div id="popup" class="popup">
@@ -36,7 +44,7 @@
         <button onclick="closeDamagePopup()">Cancel</button>
     </div>
 
-        
+
     <div class="main-container">         
         <div class="left-section">
             <h2>Exterior Damage</h2>
@@ -125,7 +133,7 @@
          style="stroke-width:0.264583;stroke:#000000;stroke-opacity:1;fill:#ffffff" />
       <path
          d="m 168.98863,28.299243 -0.29105,-0.238125 0.23813,-1.42875 c 0.13229,-0.79375 0.33073,-1.547812 0.43656,-1.693333 0.11906,-0.132292 0.43656,-0.304271 0.71438,-0.370417 0.51593,-0.105833 7.9375,-0.05292 8.28146,0.07937 0.14552,0.03969 0.17197,0.291042 0.0926,1.217084 -0.11906,1.547812 -0.27781,2.169583 -0.62177,2.447395 -0.25136,0.198438 -0.67469,0.224896 -4.41854,0.224896 -3.77032,0 -4.16719,-0.02646 -4.43177,-0.238125 z"
-         id="path72"
+         id="farola izquierda" onclick="openDamagePopup(this.id)"
          style="stroke-width:0.264583;stroke:#000000;stroke-opacity:1;fill:#ffffff" />
       <path
          d="m 139.1304,17.358723 c -0.35719,-0.251355 -0.38365,-0.185209 1.15093,-3.836459 0.67469,-1.600729 1.37584,-3.267604 1.54782,-3.7041657 0.62177,-1.481667 0.9525,-2.037292 1.37583,-2.248959 1.38906,-0.727604 11.5226,-1.349375 18.21656,-1.11125 5.54302,0.185209 9.68375,0.529167 11.15219,0.912813 0.70115,0.185208 1.07156,0.635 1.62719,1.944687 1.91823,4.4979167 3.12208,7.4612497 3.12208,7.6993747 0,0.542396 -0.38364,0.555625 -6.40292,0.330729 -7.35541,-0.277812 -18.12395,-0.277812 -25.54552,0 -3.12208,0.119063 -5.75468,0.211667 -5.82083,0.211667 -0.0794,0 -0.26458,-0.0926 -0.42333,-0.198437 z"
@@ -283,7 +291,7 @@
        id="g8" />
     <path
        d="m 9.5690642,36.726109 c 0.013229,-1.031875 0.6879168,-3.399896 0.9789588,-3.426354 0.07937,0 0.833437,0 1.666874,0 1.772708,0 1.852083,0.05292 1.852083,1.190625 0,0.886354 -0.449791,1.944687 -0.992187,2.36802 -0.330729,0.264584 -0.529167,0.291042 -1.931458,0.291042 H 9.5690642 Z"
-       id="path61"
+       id="farola izquierda" onclick="openDamagePopup(this.id)"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
     <path
        d="m 117.79359,33.488854 c -0.23633,-0.343644 -0.72288,-2.326208 -0.9036,-3.661135 -0.0556,-0.475815 -0.19462,-1.295276 -0.29192,-1.837176 -0.18072,-0.91198 -0.16682,-0.978066 0.0834,-1.149888 0.15293,-0.105736 0.59777,-0.185039 1.04261,-0.185039 0.65337,0 0.83408,0.05287 1.09822,0.317211 0.73677,0.740157 1.25112,3.0928 1.26502,5.670133 v 1.149888 h -1.04261 c -0.93139,0 -1.0565,-0.02644 -1.25112,-0.303994 z"

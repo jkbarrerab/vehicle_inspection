@@ -6,10 +6,26 @@ app = Flask(__name__)
 
 CSV_FILE = "inspection_data.csv"
 
-# @app.route("/")
-# def serve_frontend():
-#     return send_from_directory(".", "index.html")
 
+DB_FILE = "vehicle_db.csv"  # Updated path to the newly uploaded vehicle database
+
+# Function to fetch vehicle details from CSV based on plate number
+def get_vehicle_data(plate_number):
+    try:
+        with open(DB_FILE, mode="r", encoding="utf-8") as file:
+            reader = csv.DictReader(file)  # Read CSV as dictionary
+            for row in reader:
+                if row["PLACA"].strip().upper() == plate_number.strip().upper():
+                    return {
+                        "plate": row["PLACA"],
+                        "brand": row["MARCA"],
+                        "driver": row["CONDUCTOR"],
+                        "model": row["MODELO"],
+                        "OT": row["OT"],
+                    }
+        return None  # Return None if plate is not found
+    except Exception as e:
+        return {"error": f"Error reading CSV: {str(e)}"}
 
 # Ensure the CSV file has a header
 if not os.path.exists(CSV_FILE):
@@ -21,22 +37,28 @@ if not os.path.exists(CSV_FILE):
             "Damage Reports"
         ])
 
-VEHICLE_DATABASE = {
-    "XYZ123": {"type": "SUV", "brand": "Toyota", "driver": "John Doe", "model": "Rav4"}
-}
-
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/get_vehicle_data')
-def get_vehicle_data():
-    plate = request.args.get('plate')
-    return jsonify(VEHICLE_DATABASE.get(plate, {}))
+# API endpoint to fetch vehicle data
+@app.route("/get_vehicle_data", methods=["GET"])
+def fetch_vehicle_data():
+    plate = request.args.get("plate")
+    if not plate:
+        return jsonify({"error": "Plate number is required"}), 400
+    
+    vehicle_info = get_vehicle_data(plate)
+    if vehicle_info:
+        return jsonify(vehicle_info)
+    else:
+        return jsonify({"error": "Vehicle not found"}), 404
+
 
 @app.route('/submit_inspection', methods=['POST'])
 def submit_inspection():
     data = request.json
+    print(data)
     plate = data.get("plate", "N/A")
     mileage = data.get("mileage", "N/A")
     date = data.get("date", "N/A")
@@ -51,7 +73,7 @@ def submit_inspection():
     automatico = "SI" if data.get("automatico", False) else "NO"
 
     # Convert damageReports list to a string
-    damage_reports = "; ".join([f"{d['part']}" for d in data.get("damageReports", [])])
+    damage_reports = "; ".join([f"{d['part']}: {d['observation']}" for d in data.get("damageReports", [])])
     # damage_reports = "; ".join([f"{d['part']} ({d['coordinates']['x']}, {d['coordinates']['y']})" for d in data.get("damageReports", [])])
 
     # Append data to the CSV file
