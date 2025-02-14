@@ -51,7 +51,8 @@ def submit_inspection():
     automatico = "SI" if data.get("automatico", False) else "NO"
 
     # Convert damageReports list to a string
-    damage_reports = "; ".join([f"{d['part']} ({d['coordinates']['x']}, {d['coordinates']['y']})" for d in data.get("damageReports", [])])
+    damage_reports = "; ".join([f"{d['part']}" for d in data.get("damageReports", [])])
+    # damage_reports = "; ".join([f"{d['part']} ({d['coordinates']['x']}, {d['coordinates']['y']})" for d in data.get("damageReports", [])])
 
     # Append data to the CSV file
     with open(CSV_FILE, mode="a", newline="") as file:

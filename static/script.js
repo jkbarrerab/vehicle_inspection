@@ -1,5 +1,21 @@
 let damageReports = [];
 
+function openDamagePopup(partId) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('damagePart').value = partId;
+}
+
+function closeDamagePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+function saveDamageReport() {
+    const part = document.getElementById('damagePart').value;
+    const observation = document.getElementById('damageObservation').value;
+    damageReports.push({ part, observation });
+    closeDamagePopup();
+    console.log(`Damage reported on ${part}: ${observation}`);
+}
+
 function fetchVehicleData() {
     const plate = document.getElementById("plate").value;
     fetch(`/get_vehicle_data?plate=${plate}`)

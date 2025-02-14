@@ -1,47 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Inspection</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
-</head>
-<body>
-    
-    <div id="vehicle-general">
-    <h1>Vehicle Inspection</h1>    
-        <h2>Vehicle Data</h2>
-        <input type="text" id="plate" placeholder="Enter Plate Number">
-        <button onclick="fetchVehicleData()">Fetch Vehicle Data</button>
-        <div id="vehicle-info"></div>
-        <input type="text" id="mileage" placeholder="Mileage/Kilometerage">
-        <input type="date" id="date">
-        <div id="documents">
-            <label><input type="checkbox" id="gasolina"> Tarjeta de Gasolina</label>
-            <label><input type="checkbox" id="licencia"> Licencia</label>
-            <label><input type="checkbox" id="circulacion"> Tarjeta de Circulación</label>
-            <label><input type="checkbox" id="verificacion"> Verificación</label>
-            <label><input type="checkbox" id="automatico"> Automático</label>
-        </div>
-    </div>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-    <div id="popup" class="popup">
-        <h3>Report Damage</h3>
-        <label for="damagePart">Part:</label>
-        <input type="text" id="damagePart" readonly>
-        <label for="damageObservation">Observation:</label>
-        <input type="text" id="damageObservation">
-        <button onclick="saveDamageReport()">Save</button>
-        <button onclick="closeDamagePopup()">Cancel</button>
-    </div>
-
-        
-    <div class="main-container">         
-        <div class="left-section">
-            <h2>Exterior Damage</h2>
-            <div id="car-sketch">
-                <!-- <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="733px" height="420px" viewBox="0 0 733 420" preserveAspectRatio="xMidYMid meet"> -->
 <svg
    width="733"
    height="420"
@@ -324,7 +283,7 @@
     <path
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
        d="m 80.453899,13.529919 0.73185,-1.320426 1.676996,-0.961829 2.90931,-0.66171 0.03063,1.071851 c -1.195333,0.477114 -1.415464,0.94852 -1.83541,2.078209 z"
-       id="antena" onclick="openDamagePopup(this.id)"
+       id="path7"
        sodipodi:nodetypes="ccccccc" />
     <path
        d="m 58.194183,101.28382 c 1.37583,-0.21167 1.32291,0.0397 1.32291,-6.601354 0,-3.042708 -0.0265,-5.490104 -0.0661,-5.463645 -0.0265,0.03969 -0.15875,0.767291 -0.26458,1.627187 -0.39687,3.042708 -1.09802,3.65125 -4.19365,3.65125 h -1.42875 v 3.042708 3.055934 l 0.33073,0.3175 c 0.30427,0.3175 0.39688,0.33073 1.97115,0.33073 0.89958,0 1.71979,0.0265 1.82562,0.0529 0.0926,0.0265 0.3175,0.0132 0.50271,-0.0132 z"
@@ -420,97 +379,3 @@
        sodipodi:nodetypes="cccccccccccccccccccccccccccc" />
   </g>
 </svg>
-            </div>
-        </div> 
-        <div class="right-section">
-            <h2>Interior Condition</h2>
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Bueno</th>
-                    <th>Malo</th>
-                    <th>Observaciones</th>
-                </tr>
-                <tr>
-                    <td>Asientos Delantero</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Asientos Traseros</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Cielo/Techo</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Tablero</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Consola Central</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Tapetes</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Refacción</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Gato</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Llave</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Señalamiento</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Otros</td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="text"></td>
-                </tr>
-            </table>            
-        </div>
-    </div>
-    <div class="bottom-section">
-        <textarea id="interiorCleaning" placeholder="Limpieza Interior"></textarea>
-        <textarea id="exteriorCleaning" placeholder="Limpieza Exterior"></textarea>
-        <textarea id="finalRemarks" placeholder="Final Remarks"></textarea>
-    </div>
-
-<button onclick="submitInspection()">Submit Inspection</button>
-<button onclick="loadCSVData()">Refresh CSV Preview</button>
-<button onclick="downloadCSV()">Download CSV</button>
-<table id="csv-preview" border="1">
-    <tr><th>Loading CSV data...</th></tr>
-</table>    
-</body>
-</html>
